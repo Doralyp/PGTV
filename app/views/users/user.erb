@@ -1,0 +1,7 @@
+<div class="container">
+  <h3>Welcome <%= user.name %></h3>
+  <h5>SHOWS</h5>
+  <% user.shows.each do |show| %>
+    <p><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></p>
+  <% end %>
+</div>
