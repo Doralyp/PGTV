@@ -1,4 +1,4 @@
-Tvshow.create(
+Show.create(
   title: "Shark Tank",
   description: "Entreprenuers present business concepts",
   air_day: "Friday",
@@ -25,7 +25,7 @@ Channel.create(
   name: "NBC")
 
 
-Tvshow.create(
+Show.create(
   title: "Modern Family",
   description: "An honest, often hilarious, perspective of family life.",
   air_day: "Tuesday",
