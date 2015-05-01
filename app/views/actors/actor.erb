@@ -1,0 +1,9 @@
+  Name: <%=actor.name%>
+  Age: <%=actor.age%>
+  Gender: <%=actor.gender%>
+
+<p>Look at all these shows <%= actor.name %> has been in</p>
+<% shows.each do |show| %>
+  <a href='/shows/<%= show.id %>'><%= show.title %></a>
+<% end %>
+

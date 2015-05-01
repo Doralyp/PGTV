@@ -1,0 +1,5 @@
+All TV Shows for <%=genre.name%>
+
+<% shows.each do |show|%>
+  <a href='/shows/<%=show.id%>'><%=show.title%></a>
+<%end%>

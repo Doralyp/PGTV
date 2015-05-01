@@ -1,0 +1,4 @@
+<p>All Channels!</p>
+<% channels.each do |channel| %>
+  <a href='/channels/<%= channel.id %>'><%= channel.name %></a>
+<% end %>
