@@ -1,0 +1,4 @@
+<p>Look at all these shows <%= channel.name %></p>
+<% shows.each do |show| %>
+  <a href='/shows/<%= show.id %>'><%= show.title %></a>
+<% end %>
