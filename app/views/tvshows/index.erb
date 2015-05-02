@@ -1,11 +1,11 @@
 <div class="container">
-  <span class="show-header"><h1>All Shows</h1></span>
+  <div class="page-header"><h1>All Shows</h1></div><hr>
   <ul class="list-group">
     <% shows.each do |show| %>
       <li class="list-group-item">
         <a href="/shows/<%= show.id %>"><h6><%= show.title %></h6></a>
-        <p><%= show.genre.name %></p>
-        <p><%= show.rating %></p>
+        <p>Genre: <%= show.genre.name %></p>
+        <p>Rating: <%= show.rating %></p>
       </li>
     <% end %>
   </ul>

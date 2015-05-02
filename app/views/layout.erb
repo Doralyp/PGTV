@@ -43,16 +43,15 @@
 <div class="container">
   <header>
     <div class="well well-lg">
-      <h1>PGTV | Television Together</h1>
+      <a href="/"><h1>PGTV | Television Together</h1></a>
       <% if session[:user_id] %>
-      <p> Hey I am getting to this point </p>
         <form action="/logout" method="post">
-          <input type='submit' value='Logout' />
+          <input class="linkButton" type='submit' value='Logout' />
         </form>
       <% else %>
         <a href="/login">Login</a>
       <% end %>
-      <a href="/signup"> Sign Up</a>
+      | <a href="/signup"> Sign Up</a>
     </div>
   </header>
   <%= yield %>

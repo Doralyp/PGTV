@@ -2,10 +2,10 @@
   <h2><%= show.title %></h2>
   <h5><%= show.description %></h5>
   <h6>Watch it on <%= show.channel.name%> on <%=show.air_day%>s at <%=show.air_time%></h6>
-  <p><%= show.genre.name %></p>
+  <p>Genre: <%= show.genre.name %></p>
+  <p>Rating: <%= show.rating %></p>
+  <img src="<%= show.photo %>" />
 </div>
-
-Rating: <%= show.rating %>
 
 <%if user_id%>
   <% if user.shows.where(id: show.id).count != 0 %>

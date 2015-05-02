@@ -1,4 +1,5 @@
-<p>Look at all these shows <%= channel.name %></p>
+<img src="<%= channel.photo %>" />
+<p>Look at all these shows <%= channel.name %> has!</p>
 <% shows.each do |show| %>
   <a href='/shows/<%= show.id %>'><%= show.title %></a>
 <% end %>

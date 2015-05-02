@@ -1,4 +1,13 @@
-<p>All Channels!</p>
-<% channels.each do |channel| %>
-  <a href='/channels/<%= channel.id %>'><%= channel.name %></a>
-<% end %>
+<div class="container"
+  <ul class="list-group">
+    <div class="page-header"><h1>All Channels</h1></div><hr>
+    <% channels.each do |channel| %>
+      <li class="list-group-item clearfix">
+        <div class="format-channel-image">
+          <img class="image-size" src="<%= channel.photo %>" />
+          <a href='/channels/<%= channel.id %>'><%= channel.name %></a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
