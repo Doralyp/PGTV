@@ -1,22 +1,21 @@
+get '/users/:id/calendar' do
+user_id = session[:user_id]
+shows = User.find(user_id)
+erb :'/users/calendar', locals: {shows: shows}
+end
+
 get "/users/:id" do
   genre = Genre.all
   channel = Channel.all
+  shows = Show.all
   if session[:user_id] == params[:id].to_i
     user = User.find(params[:id])
     return [500,"No user by that ID found"] unless user
-    erb :"users/user", locals:{user: user, genre: genre, channel: channel }
+    erb :"users/user", locals:{user: user, genre: genre, channel: channel, shows: shows }
   else
     redirect '/'
   end
 end
-
-
-# get "/users/:id" do
-#   user = User.find(params[:id])
-#   favgenre = Genre.where()
-#   erb :"users/user", locals:{user: user}
-# end
-
 
 put '/users/:id' do
  user_id = session[:user_id]
@@ -36,3 +35,5 @@ delete '/users/:id' do
  user.shows.delete(show)
  redirect "/users/#{user_id}"
 end
+
+
