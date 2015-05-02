@@ -4,6 +4,7 @@ class Show < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_many :characters
   has_many :actors, through: :characters
+  has_many :comments
 
   validates :title, presence: true
 end
