@@ -22,5 +22,5 @@ put '/users/:id' do
  show = Show.find(showid)
  user = User.find(user_id)
  user.shows << show
- 'THIS IS WORKING'
+ redirect "/users/#{user_id}"
 end
