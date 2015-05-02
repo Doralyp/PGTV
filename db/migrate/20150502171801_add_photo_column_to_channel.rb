@@ -1,5 +1,5 @@
 class AddPhotoColumnToChannel < ActiveRecord::Migration
   def change
-      add_column :channels, :photo, :string
+      add_column :channels, :photo, :text
   end
 end
