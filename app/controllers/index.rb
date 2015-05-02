@@ -6,15 +6,6 @@ get '/login' do
   erb :"users/login"
 end
 
-post '/login' do
-  user = User.find_by(email: params[:email])
-  if user.authenticate(params[:password])
-    redirect "users/#{user.id}"
-  else
-    redirect "/"
-  end
-end
-
 get '/signup' do
   erb :"/users/signup"
 end
@@ -26,4 +17,13 @@ post '/signup' do
   user.password = params[:password]
   return [500, "Something went wrong. Try registering again." ] unless user.save
   redirect "users/#{user.id}"
+end
+
+post '/login' do
+  user = User.find_by(email: params[:email])
+  if user.authenticate(params[:password])
+    redirect "/users/#{ user.id }"
+  else
+    redirect "/"
+  end
 end
