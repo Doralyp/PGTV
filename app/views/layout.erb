@@ -29,10 +29,13 @@
       <nav class="navbar navbar-default">
         <div class="container">
           <h1>PGTV | Television Together</h1>
-          <% if current_user %>
-            <a href="/logout">Logout</a>
+          <% if session[:user_id] %>
+          <p> Hey I am getting to this point </p>
+            <form action="/logout" method="post">
+              <input type='submit' value='Logout' />
+            </form>
           <% else %>
-          <a href="/login">Login</a>
+            <a href="/login">Login</a>
           <% end %>
           <a href="/signup"> Sign Up</a>
           <br>
