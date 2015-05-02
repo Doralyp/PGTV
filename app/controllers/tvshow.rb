@@ -23,7 +23,10 @@ put '/show/:id/rating' do
   current_rating = show.rating
   current_rating
   new_rating = current_rating + rating
-  show.update(rating: new_rating)
+  new_count = show.rate_count + 1
+  show.update(rate_count: new_count)
+  avg_rating = new_rating / show.rate_count
+  show.update(rating: avg_rating)
   redirect '/shows/:id'
 end
 
