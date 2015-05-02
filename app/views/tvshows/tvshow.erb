@@ -5,7 +5,11 @@
   <p><%= show.genre.name %></p>
 </div>
 
+Rating: <%= show.rating %>
+
+<%if user_id%>
 <form action="/users/:id" method="post">
   <input type='hidden' name='_method' value='put'>
   <input type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
 </form>
+<%end%>
