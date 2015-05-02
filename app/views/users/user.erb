@@ -5,5 +5,25 @@
     <p><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></p>
   <% end %>
 
-  Favorite genre: <%
+  <% fav_genre = {} %>
+  <% fav_genre.default = 0 %>
+  Favorite Genre:
+   <% user.shows.each do |show| %>
+  <p><% genre_name = genre.find(show.genre_id).name %></p>
+  <% fav_genre[genre_name] += 1 %>
+  <% end %>
+  <% fav_genre.values.sort %>
+  <p><%= fav_genre.keys %></p>
+
+
+  <% fav_channel = {} %>
+  <% fav_channel.default = 0 %>
+  Favorite Channel:
+   <% user.shows.each do |show| %>
+  <p><% channel_name = channel.find(show.channel_id).name %></p>
+  <% fav_channel[channel_name] += 1 %>
+  <% end %>
+  <% fav_channel.values.sort %>
+  <p><%= fav_channel.keys %></p>
+
 </div>
