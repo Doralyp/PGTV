@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="css/calendar.css">
   <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
 
   <!--
@@ -28,12 +29,13 @@
   <header>
       <nav class="navbar navbar-default">
         <div class="container">
-          <h1>PGTV | Television Together</h1>
+          <h1><a href='/'>PGTV | Television Together</a></h1>
           <% if session[:user_id] %>
-          <p> Hey I am getting to this point </p>
+          <%user = session[:user_id]%>
             <form action="/logout" method="post">
               <input type='submit' value='Logout' />
             </form>
+            <a href="/users/<%=user%>"> My Shelf </a>
           <% else %>
             <a href="/login">Login</a>
           <% end %>
