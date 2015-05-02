@@ -1,10 +1,12 @@
 <div class="container">
   <span class="show-header"><h1>All Shows</h1></span>
-  <% shows.each do |show| %>
-    <div class="show">
-      <a href="/shows/<%= show.id %>"><h6><%= show.title %></h6></a>
-      <p><%= show.genre.name %></p>
-      <hr>
-    </div>
-  <% end %>
+  <ul class="list-group">
+    <% shows.each do |show| %>
+      <li class="list-group-item">
+        <a href="/shows/<%= show.id %>"><h6><%= show.title %></h6></a>
+        <p><%= show.genre.name %></p>
+        <p><%= show.rating %></p>
+      </li>
+    <% end %>
+  </ul>
 </div>
