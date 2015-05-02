@@ -24,3 +24,13 @@ put '/users/:id' do
  user.shows << show
  redirect "/users/#{user_id}"
 end
+
+
+delete '/users/:id' do
+ user_id = session[:user_id]
+ showid = params[:show].keys
+ show = Show.find(showid)
+ user = User.find(user_id)
+ user.shows.delete(show)
+ redirect "/users/#{user_id}"
+end

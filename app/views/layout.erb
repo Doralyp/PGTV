@@ -31,9 +31,11 @@
         <div class="container">
           <h1><a href='/'>PGTV | Television Together</a></h1>
           <% if session[:user_id] %>
+          <%user = session[:user_id]%>
             <form action="/logout" method="post">
               <input type='submit' value='Logout' />
             </form>
+            <a href="/users/<%=user%>"> My Shelf </a>
           <% else %>
             <a href="/login">Login</a>
           <% end %>

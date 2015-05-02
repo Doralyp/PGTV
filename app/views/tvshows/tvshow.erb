@@ -8,8 +8,15 @@
 Rating: <%= show.rating %>
 
 <%if user_id%>
-<form action="/users/:id" method="post">
-  <input type='hidden' name='_method' value='put'>
-  <input type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
-</form>
+  <% if user.shows.where(id: show.id).count != 0 %>
+    <form action="/users/:id" method="post">
+      <input type='hidden' name='_method' value='delete'>
+      <input type='submit' name='show[<%= show.id%>]' value='Delete from my shows'>
+    </form>
+  <%else%>
+    <form action="/users/:id" method="post">
+      <input type='hidden' name='_method' value='put'>
+      <input type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
+    </form>
+  <%end%>
 <%end%>
