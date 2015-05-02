@@ -21,6 +21,7 @@
   <%end%>
 <%end%>
 
+
 <div class="stars">
   <form action="/show/<%= show.id%>/rating" method='post'>
     <input type='hidden' name='_method' value='put'>
@@ -39,3 +40,19 @@
 </div>
 
 <%= show.rate_count%> votes
+
+<div>
+  <form action="/shows/new" method="post">
+  <input type='hidden' name='_method' value='put'>
+  <input type="text" name='comment'placeholder="Write your comment here">
+  <input type="submit" name='show[<%= show.id%>]' value="Comment">
+
+  </form>
+</div>
+
+<div>
+  <% show.comments.each do |blurb| %>
+  <p><%= blurb.comment %></p>
+  <% end %>
+</div>
+
