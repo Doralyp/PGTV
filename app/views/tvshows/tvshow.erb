@@ -4,3 +4,8 @@
   <h6>Watch it on <%= show.channel.name%> on <%=show.air_day%>s at <%=show.air_time%></h6>
   <p><%= show.genre.name %></p>
 </div>
+
+<form action="/users/:id" method="post">
+  <input type='hidden' name='_method' value='put'>
+  <input type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
+</form>

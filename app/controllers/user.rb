@@ -9,3 +9,18 @@ get "/users/:id" do
 end
 
 
+# get "/users/:id" do
+#   user = User.find(params[:id])
+#   favgenre = Genre.where()
+#   erb :"users/user", locals:{user: user}
+# end
+
+
+put '/users/:id' do
+ user_id = session[:user_id]
+ showid = params[:show].keys
+ show = Show.find(showid)
+ user = User.find(user_id)
+ user.shows << show
+ redirect "/users/#{user_id}"
+end
