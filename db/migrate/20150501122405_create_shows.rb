@@ -2,7 +2,7 @@ class CreateShows < ActiveRecord::Migration
   def change
     create_table :shows do |t|
       t.string  :title, null: false
-      t.string  :description
+      t.text  :description
       t.string  :air_day
       t.string  :air_time
       t.decimal :rating
