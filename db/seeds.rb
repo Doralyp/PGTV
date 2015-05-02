@@ -34,6 +34,33 @@ Show.create(
   channel_id: 1,
   genre_id: 2 )
 
+Show.create(
+  title: "Law and Order",
+  description: "Depicts ficticious law and order cases in NYC.",
+  air_day: "Wednesday",
+  air_time: "9:00pm",
+  rating: 3.9,
+  channel_id: 2,
+  genre_id: 3 )
+
+Show.create(
+  title: "The Office",
+  description: "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
+  air_day: "Monday",
+  air_time: "6:00pm",
+  rating: 4.9,
+  channel_id: 2,
+  genre_id: 2 )
+
+Show.create(
+  title: "The Tonight Show",
+  description: "Jimmy Fallon hosts the tonight show and interviews celebrities, plays games with them and has a musical or comedic guest perform.",
+  air_day: "Thursday",
+  air_time: "10:00pm",
+  rating: 4.4,
+  channel_id: 2,
+  genre_id: 1 )
+
 Actor.create(
   name: "Mark Cuban",
   gender: "male",
@@ -53,4 +80,15 @@ Character.create(
   actor_id: 2,
   show_id: 2,
   name: "Claire Dunphy")
+
+Character.create(
+  actor_id: "Rainn Wilson",
+  show_id: 4,
+  name: "Dwight Schrute")
+
+Character.create(
+  actor_id: "Mariska Hargitay",
+  show_id: 3,
+  name: "Olivia Benson")
+
 
