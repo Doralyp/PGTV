@@ -24,10 +24,11 @@
   <title></title>
 </head>
 <body>
-<div id="content">
+<div class="container">
   <header>
       <nav class="navbar navbar-default">
         <div class="container">
+          <h1>PGTV | Television Together</h1>
           <% if current_user %>
             <a href="/logout">Logout</a>
           <% else %>
@@ -39,8 +40,8 @@
           <a href="/genres/index">Genres</a>
           <a href="/channels/index">Channels</a>
         </div>
+      </nav>
   </header>
-  <h1>PGTV!!!!!</h1>
 
   <%= yield %>
 </div>
