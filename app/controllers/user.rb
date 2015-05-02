@@ -1,3 +1,9 @@
+get '/users/:id/calendar' do
+user_id = session[:user_id]
+shows = User.find(user_id)
+erb :'/users/calendar', locals: {shows: shows}
+end
+
 get "/users/:id" do
   genre = Genre.all
   channel = Channel.all
@@ -29,3 +35,5 @@ delete '/users/:id' do
  user.shows.delete(show)
  redirect "/users/#{user_id}"
 end
+
+

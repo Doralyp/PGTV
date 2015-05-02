@@ -27,11 +27,11 @@
   <p><%= fav_channel.keys.join %><p>
 
 <h6>Based on your likes, we recommend watching:</h6>
-PLACEHOLDER FOR RECOMMENDATIONS
+<% id = rand(shows.count) %>
+<% recommendation = shows.find(id) %>
+<%= recommendation.title %> | <%= recommendation.air_day %>'s at <%= recommendation.air_time %>
+
 </div>
 
 
-<% user.shows.each do |show|
-  day = show.air_day
-  time = show.air_time end %>
-
+<a href="/users/<%=user.id%>/calendar">My Calendar</a>
