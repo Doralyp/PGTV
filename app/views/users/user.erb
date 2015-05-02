@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Welcome <%= user.name %></h3>
-  <h5>SHOWS</h5>
+  <h5>Your Shows:</h5>
   <% user.shows.each do |show| %>
     <p><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></p>
   <% end %>
@@ -13,17 +13,25 @@
   <% fav_genre[genre_name] += 1 %>
   <% end %>
   <% fav_genre.values.sort %>
-  <p><%= fav_genre.keys %></p>
+  <p><%= fav_genre.keys.join %></p>
 
 
   <% fav_channel = {} %>
   <% fav_channel.default = 0 %>
   Favorite Channel:
    <% user.shows.each do |show| %>
-  <p><% channel_name = channel.find(show.channel_id).name %></p>
-  <% fav_channel[channel_name] += 1 %>
+  <p><% @channel_name = channel.find(show.channel_id).name %></p>
+  <% fav_channel[@channel_name] += 1 %>
   <% end %>
   <% fav_channel.values.sort %>
-  <p><%= fav_channel.keys %></p>
+  <p><%= fav_channel.keys.join %><p>
 
+<h6>Based on your likes, we recommend watching:</h6>
+PLACEHOLDER FOR RECOMMENDATIONS
 </div>
+
+
+<% user.shows.each do |show|
+  day = show.air_day
+  time = show.air_time end %>
+
