@@ -1,4 +1,10 @@
-All Genre's
-<%genres.each do |genre|%>
-  <a href='/genres/<%=genre.id%>'><%=genre.name%></a>
-<%end%>
+<div class="container">
+<div class="page-header"><h1>All Genres</h1></div><hr>
+  <ul class="list-group">
+    <%genres.each do |genre|%>
+      <li class="list-group-item">
+        <a href='/genres/<%=genre.id%>'><%=genre.name%></a>
+      </li>
+    <%end%>
+  </ul>
+</div>
