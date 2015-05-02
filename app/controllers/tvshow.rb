@@ -16,3 +16,14 @@ get "/shows/:id" do
 end
 
 
+put '/show/:id/rating' do
+  show = Show.find(params[:id])
+  rating = params[:star]
+  rating.keys.join
+  current_rating = show.rating
+  current_rating
+  new_rating = current_rating + rating
+  show.update(rating: new_rating)
+  redirect '/shows/:id'
+end
+
