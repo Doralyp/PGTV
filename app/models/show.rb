@@ -8,4 +8,8 @@ class Show < ActiveRecord::Base
   has_many :ratings
 
   validates :title, presence: true
+
+  def rating_average
+    ratings.average(:rating_value).to_f
+  end
 end
