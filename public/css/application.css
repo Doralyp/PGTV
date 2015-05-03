@@ -63,6 +63,7 @@ body {
     padding: 0 0em;
     max-width: 37em;
     position: relative;
+    margin-bottom: 20px;
 
 }
 
@@ -99,7 +100,7 @@ div.stars {
 input.star { display: none; }
 
 label.star {
-  float: right;
+  float:right;
   padding: 10px;
   font-size: 25px;
   color: #ffd500;
@@ -126,6 +127,11 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+.fr {
+  float:right;
+  margin-top: 10px;
+}
+
 .linkButton {
     margin-left: -6px;
      background: none;
@@ -144,6 +150,31 @@ label.star:before {
     padding-top: 18px;
     margin-bottom: 0px;
     border-radius: 6px;
+}
+
+.show-left {
+  width: 49%;
+  display: inline;
+  float: left;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.show-right {
+  width: 49%;
+  display: inline;
+  float: right;
+}
+
+.show-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.show-add {
+  margin-top: 40px;
 }
 
 /*code {
