@@ -1,3 +1,5 @@
+require 'pry'
+
 get "/shows" do
   shows = Show.all
   erb :"/tvshows/index", locals:{shows: shows}
@@ -25,15 +27,9 @@ get "/shows/:id" do
   erb :"/tvshows/tvshow", locals:{show: show, user_id: user_id, user: user}
 end
 
-put '/show/:id' do
+put '/show/:id/rating' do
   show = Show.find(params[:id])
-  rating = params[:star]
-  rate = rating.keys.join
-  show.ratings << Rating.create(rating_value: rate.to_i, show_id: params[:id])
-  ratings = []
-  show.ratings.each do |value|
-    ratings << value.rating_value
-  end
-  new_rating = ratings.inject(:+)
+  rating = Rating.new(rating_value: (6 - params[:star].first.first.to_i))
+  show.ratings << rating
   redirect "/shows/#{show.id}"
 end
