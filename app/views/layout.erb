@@ -49,10 +49,10 @@
           <input class="linkButton" type='submit' value='Logout' />
           <span>| <a href="/signup"> Sign Up</span></a>
         </form>
+        <a href="/users/<%= session[:user_id] %>">Profile</a>
       <% else %>
         <a href="/login">Login </a><span>| <a href="/signup"> Sign Up</span></a>
       <% end %>
-    </div>
   </header>
   <%= yield %>
 </div>
