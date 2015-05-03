@@ -1,5 +1,21 @@
-<img src="<%= channel.photo %>" />
-<p>Look at all these shows <%= channel.name %> has!</p>
-<% shows.each do |show| %>
-  <a href='/shows/<%= show.id %>'><%= show.title %></a>
-<% end %>
+<div class="container">
+  <div class="page-header">
+    <img class="channel-img"src="<%= channel.photo %>" />
+  </div>
+  <hr>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2 class="panel-title">Shows Airing On <%= channel.name %></h2>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <% shows.each do |show| %>
+          <li class="list-group-item">
+            <a href="/shows/<%= show.id %>"><%= show.title %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

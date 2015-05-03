@@ -159,12 +159,14 @@ label.star:before {
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .show-right {
   width: 49%;
   display: inline;
   float: right;
+  margin-bottom: 20px;
 }
 
 .show-image {
@@ -176,6 +178,15 @@ label.star:before {
 .show-add {
   margin-top: 40px;
 }
+
+.channel-img {
+  background-color: #f0f0f0;
+  height: 100px;
+  display:block;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
 
 /*code {
     font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
