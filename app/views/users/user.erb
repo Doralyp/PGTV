@@ -2,33 +2,16 @@
   <h3>Welcome <%= user.name %></h3>
   <h5>Your Shows:</h5>
   <% user.shows.each do |show| %>
-    <p><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></p>
+    <p><a href="/shows/<%=show.id%>"><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></a></p>
   <% end %>
 
-  <% fav_genre = {} %>
-  <% fav_genre.default = 0 %>
-  Favorite Genre:
-   <% user.shows.each do |show| %>
-  <p><% genre_name = genre.find(show.genre_id).name %></p>
-  <% fav_genre[genre_name] += 1 %>
-  <% end %>
-  <% fav_genre.values.sort %>
-  <p><%= fav_genre.keys.join %></p>
 
+  <p>Favorite Genre: <%= fav_genre.name %></p>
 
-  <% fav_channel = {} %>
-  <% fav_channel.default = 0 %>
-  Favorite Channel:
-   <% user.shows.each do |show| %>
-  <p><% @channel_name = channel.find(show.channel_id).name %></p>
-  <% fav_channel[@channel_name] += 1 %>
-  <% end %>
-  <% fav_channel.values.sort %>
-  <p><%= fav_channel.keys.join %><p>
+  <p>Favorite Channel: <%= fav_channel.name %></p>
 
 <h6>Based on your likes, we recommend watching:</h6>
-<% id = rand(1..shows.count) %>
-<% recommendation = shows.find(id) %>
+
 <%= recommendation.title %> | <%= recommendation.air_day %>'s at <%= recommendation.air_time %>
 
 </div>
