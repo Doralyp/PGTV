@@ -1,9 +1,5 @@
 <div class="container">
-  p shows
-  <%shows.each do |show|%>
-    <p><%= show.title %></p>
-    <p><%= show.air_day%>s at <%= show.air_time %></p>
-  <%end%>
+
   <table class="table">
     <tr>
       <th>Time</th>
@@ -15,16 +11,16 @@
       <th>Friday</th>
       <th>Saturday</th>
     </tr>
-    <%shows.each do |show|%>
+    <%shows.each do |time, series|%>
       <tr>
-        <td><%= show.air_time %></td>
-        <td><%= show.title if show.air_day == "Sunday" %></td>
-        <td><%= show.title if show.air_day == "Monday" %></td>
-        <td><%= show.title if show.air_day == "Tuesday" %></td>
-        <td><%= show.title if show.air_day == "Wednesday" %></td>
-        <td><%= show.title if show.air_day == "Thursday" %></td>
-        <td><%= show.title if show.air_day == "Friday" %></td>
-        <td><%= show.title if show.air_day == "Saturday" %></td>
+        <td><%= time %></td>
+        <td><%= series.find {|serie| serie.air_day == "Sunday"}.title if series.find {|serie| serie.air_day == "Sunday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Monday"}.title if series.find {|serie| serie.air_day == "Monday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Tuesday"}.title if series.find {|serie| serie.air_day == "Tuesday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Wednesday"}.title if series.find {|serie| serie.air_day == "Wednesday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Thursday"}.title if series.find {|serie| serie.air_day == "Thursday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Friday"}.title if series.find {|serie| serie.air_day == "Friday"} %></td>
+        <td><%= series.find {|serie| serie.air_day == "Saturday"}.title if series.find {|serie| serie.air_day == "Saturday"} %></td>
       </tr>
     <%end%>
   </table>

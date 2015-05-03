@@ -1,6 +1,6 @@
 get '/users/:id/calendar' do
 user_id = session[:user_id]
-shows = User.find(user_id).shows.order(:air_time)
+shows = User.find(user_id).shows.order(:air_time).group_by(&:air_time)
 erb :'/users/calendar', locals: {shows: shows}
 end
 
