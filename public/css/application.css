@@ -73,6 +73,12 @@ body {
 
 .show {
     background-color: white;
+    padding: 5px;
+}
+
+.profile {
+  background-color: white;
+  padding: 5px;
 }
 a {
     color: #777;

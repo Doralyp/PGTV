@@ -1,20 +1,27 @@
 <div class="container">
-  <h3>Welcome <%= user.name %></h3>
-  <h5>Your Shows:</h5>
+	<div class="show">
+  	<h3>Welcome <%= user.name %></h3>
+  	<a href="/users/<%=user.id%>/calendar" style='font-size: 15px; color: #4FC3F7 '>Show Calendar</a>
+	</div>
+	<div class="profile">
+  <h5 style='color: #311B92'>Your Shows:</h5>
   <% user.shows.each do |show| %>
     <p><a href="/shows/<%=show.id%>"><%= show.title %> | <%= show.air_day %>'s at <%= show.air_time %></a></p>
   <% end %>
 
+  <h5 style='color: #311B92'>Your favorites: </h5>
+  <p style='color: #777'>Genre: <%= fav_genre %></p>
+  <p style='color: #777'>Channel: <%= fav_channel %></p>
 
-  <p>Favorite Genre: <%= fav_genre %></p>
+ 
+  <h6 style='color: #283593'>Based on your likes, we recommend watching:</h6>
 
-  <p>Favorite Channel: <%= fav_channel %></p>
-
-  <h6>Based on your likes, we recommend watching:</h6>
-
-  <%= recommendation.title %> | <%= recommendation.air_day %>'s at <%= recommendation.air_time %>
+  <p style='color: #777'><%= recommendation.title %> | <%= recommendation.air_day %>'s at <%= recommendation.air_time %><p>
+<br>
 
 </div>
 
 
-<a href="/users/<%=user.id%>/calendar">My Calendar</a>
+
+
+</div>
