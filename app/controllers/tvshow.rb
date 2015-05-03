@@ -1,7 +1,7 @@
 require 'pry'
 
 get "/shows" do
-  shows = Show.all
+  shows = Show.all.sort{ |show_a, show_b| show_b.rating_average <=> show_a.rating_average }
   erb :"/tvshows/index", locals:{shows: shows}
 end
 
