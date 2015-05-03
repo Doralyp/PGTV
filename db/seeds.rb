@@ -77,7 +77,7 @@ Show.create(
   description: "Entreprenuers present business concepts",
   air_day: "Friday",
   air_time: "21:00",
-  rating: 3,
+  # #rating: "3",
   channel_id: 1,
   genre_id: 1,
   photo: "http://ia.media-imdb.com/images/M/MV5BNDE2NTEzMzUxNV5BMl5BanBnXkFtZTgwNTYwMTE5MjE@._V1_SX640_SY720_.jpg" )
@@ -88,7 +88,7 @@ Show.create(
   description: "An honest, often hilarious, perspective of family life.",
   air_day: "Tuesday",
   air_time: "7:00pm",
-  rating: 4.2,
+  #rating: "4",
   channel_id: 1,
   genre_id: 2,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTg3ODU2Mzg0NV5BMl5BanBnXkFtZTgwOTU5MDE5MjE@._V1_SX640_SY720_.jpg" )
@@ -99,7 +99,7 @@ Show.create(
   description: "Depicts ficticious law and order cases in NYC.",
   air_day: "Wednesday",
   air_time: "9:00pm",
-  rating: 3.9,
+  #rating: "3",
   channel_id: 2,
   genre_id: 3,
   photo: "http://ia.media-imdb.com/images/M/MV5BMjE3NzMxOTI4M15BMl5BanBnXkFtZTgwMzE1ODg3MjE@._V1_SX640_SY720_.jpg" )
@@ -110,7 +110,7 @@ Show.create(
   description: "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
   air_day: "Monday",
   air_time: "6:00pm",
-  rating: 4.9,
+  #rating: "4",
   channel_id: 2,
   genre_id: 2,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTgzNjAzMDE0NF5BMl5BanBnXkFtZTcwNTEyMzM3OA@@._V1_SX640_SY720_.jpg" )
@@ -121,7 +121,7 @@ Show.create(
   description: "Jimmy Fallon hosts the tonight show and interviews celebrities, plays games with them and has a musical or comedic guest perform.",
   air_day: "Thursday",
   air_time: "10:00pm",
-  rating: 4.4,
+  #rating: "4",
   channel_id: 3,
   genre_id: 1,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTczNjI3MTQ1M15BMl5BanBnXkFtZTgwMDgyNTAwMTE@._V1_SX640_SY720_.jpg" )
@@ -132,7 +132,7 @@ Show.create(
   description: "The story behind Commissioner James Gordon's rise to prominence in Gotham City in the years before Batman's arrival.",
   air_day: "Thursday",
   air_time: "8:00pm",
-  rating: 4.8,
+  #rating: "4",
   channel_id: 4,
   genre_id: 4,
   photo: "http://ia.media-imdb.com/images/M/MV5BMjMzNTU3MDY3OF5BMl5BanBnXkFtZTgwMjY1Nzg3MTE@._V1_SX640_SY720_.jpg")
@@ -143,7 +143,7 @@ Show.create(
   description: "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.",
   air_day: "Friday",
   air_time: "5:00pm",
-  rating: 4.8,
+  #rating: "5",
   channel_id: 5,
   genre_id: 3,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTY1NDcwMDcxN15BMl5BanBnXkFtZTgwMDI1NTQzNDE@._V1_SX640_SY720_.jpg")
@@ -154,7 +154,7 @@ Show.create(
   description: "A brilliant and charismatic, yet psychotic serial killer communicates with other active serial killers and activates a cult of believers following his every command.",
   air_day: "Monday",
   air_time: "10:00pm",
-  rating: 4.8,
+  #rating: "5",
   channel_id: 6,
   genre_id: 4,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTUxNTk0MjUwOV5BMl5BanBnXkFtZTgwOTE4MDc2NDE@._V1_SX640_SY720_.jpg")
@@ -165,7 +165,7 @@ Show.create(
   description: "Bob's Burgers centers on the Belcher family (consists of Bob, Linda, Tina, Gene and Louise) who own a hamburger restaurant. Bob's burgers are really delicious and appear to be better than his rivals' but when it comes to selling burgers, his kids aren't really helpful, as more customers head over to Jimmy Pesto's restaurant.",
   air_day: "Wednesday",
   air_time: "7:00pm",
-  rating: 4.8,
+  #rating: "4",
   channel_id: 8,
   genre_id: 6,
   photo: "http://ia.media-imdb.com/images/M/MV5BMTg2MzI0NTQ3OV5BMl5BanBnXkFtZTgwODMyMzc1MDE@._V1_SX640_SY720_.jpg" )
@@ -176,7 +176,7 @@ Show.create(
   description: "Ichabod Crane is resurrected and pulled two and a half centuries through time to unravel a mystery that dates all the way back to the founding fathers.",
   air_day: "Monday",
   air_time: "9:00pm",
-  rating: 4.8,
+  #rating: "1",
   channel_id: 5,
   genre_id: 10,
   photo: "http://ia.media-imdb.com/images/M/MV5BODk0Nzg3OTAwMF5BMl5BanBnXkFtZTgwNDM0OTIzMDE@._V1_SX640_SY720_.jpg")

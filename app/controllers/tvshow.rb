@@ -25,16 +25,15 @@ get "/shows/:id" do
   erb :"/tvshows/tvshow", locals:{show: show, user_id: user_id, user: user}
 end
 
-put '/show/:id/rating' do
+put '/show/:id' do
   show = Show.find(params[:id])
   rating = params[:star]
-  rating.keys.join
-  current_rating = show.rating
-  current_rating
-  new_rating = current_rating + rating
-  new_count = show.rate_count + 1
-  show.update(rate_count: new_count)
-  avg_rating = new_rating / show.rate_count
-  show.update(rating: avg_rating)
-  redirect '/shows/:id'
+  rate = rating.keys.join
+  show.ratings << Rating.create(rating_value: rate.to_i, show_id: params[:id])
+  ratings = []
+  show.ratings.each do |value|
+    ratings << value.rating_value
+  end
+  new_rating = ratings.inject(:+)
+  redirect "/shows/#{show.id}"
 end

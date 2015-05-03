@@ -6,7 +6,7 @@ class CreateShows < ActiveRecord::Migration
       t.string  :air_day
       t.string  :air_time
       t.integer :rate_count, default: 0
-      t.integer :rating
+      t.integer :rating_id
       t.integer :channel_id, null: false
       t.integer :genre_id, null: false
 
