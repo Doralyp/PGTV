@@ -14,13 +14,13 @@
     <%shows.each do |time, series|%>
       <tr>
         <td><%= time %></td>
-        <td><%= series.find {|serie| serie.air_day == "Sunday"}.title if series.find {|serie| serie.air_day == "Sunday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Monday"}.title if series.find {|serie| serie.air_day == "Monday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Tuesday"}.title if series.find {|serie| serie.air_day == "Tuesday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Wednesday"}.title if series.find {|serie| serie.air_day == "Wednesday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Thursday"}.title if series.find {|serie| serie.air_day == "Thursday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Friday"}.title if series.find {|serie| serie.air_day == "Friday"} %></td>
-        <td><%= series.find {|serie| serie.air_day == "Saturday"}.title if series.find {|serie| serie.air_day == "Saturday"} %></td>
+        <td><%= display_in_calendar(series, "Sunday") %></td>
+        <td><%= display_in_calendar(series, "Monday") %></td>
+        <td><%= display_in_calendar(series, "Tuesday") %></td>
+        <td><%= display_in_calendar(series, "Wednesday") %></td>
+        <td><%= display_in_calendar(series, "Thursday") %></td>
+        <td><%= display_in_calendar(series, "Friday") %></td>
+        <td><%= display_in_calendar(series, "Saturday") %></td>
       </tr>
     <%end%>
   </table>

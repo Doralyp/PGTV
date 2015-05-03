@@ -10,13 +10,9 @@ get "/users/:id" do
     user = User.find(params[:id])
     return [500,"No user by that ID found"] unless user
 
-    shows_by_genre = user.shows.group_by(&:genre_id)
-    genres = shows_by_genre.each { |k,v| shows_by_genre[k] = v.count}
-    fav_genre = Genre.find(genres.max_by{|k,v| v}[0])
+    fav_genre = favorite("Genre", user)
 
-    shows_by_channel = user.shows.group_by(&:channel_id)
-    channels = shows_by_channel.each { |k,v| shows_by_channel[k] = v.count}
-    fav_channel = Channel.find(channels.max_by{|k,v| v}[0])
+    fav_channel = favorite("Channel", user)
 
     recommendation = Show.find(rand(1..Show.all.count))
 
