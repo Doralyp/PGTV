@@ -5,13 +5,22 @@ erb :'/users/calendar', locals: {shows: shows}
 end
 
 get "/users/:id" do
-  genre = Genre.all
-  channel = Channel.all
-  shows = Show.all
   if session[:user_id] == params[:id].to_i
+
     user = User.find(params[:id])
     return [500,"No user by that ID found"] unless user
-    erb :"users/user", locals:{user: user, genre: genre, channel: channel, shows: shows }
+
+    shows_by_genre = user.shows.group_by(&:genre_id)
+    genres = shows_by_genre.each { |k,v| shows_by_genre[k] = v.count}
+    fav_genre = Genre.find(genres.max_by{|k,v| v}[0])
+
+    shows_by_channel = user.shows.group_by(&:channel_id)
+    channels = shows_by_channel.each { |k,v| shows_by_channel[k] = v.count}
+    fav_channel = Channel.find(channels.max_by{|k,v| v}[0])
+
+    recommendation = Show.find(rand(1..Show.all.count))
+
+    erb :"users/user", locals:{user: user, fav_genre: fav_genre, fav_channel: fav_channel, recommendation: recommendation}
   else
     redirect '/'
   end
