@@ -4,32 +4,32 @@
     <h5><%= show.description %></h5>
     <h6>Watch it on <%= show.channel.name%> on <%=show.air_day%>s at <%=show.air_time%></h6>
     <p>Genre: <%= show.genre.name %></p>
-    <p>Rating: <%= show.rating %></p>
+    <p>Rating: <%= show.ratings %></p>
     <div class="stars">
       <form action="/show/<%= show.id%>/rating" method='post'>
         <input type='hidden' name='_method' value='put'>
-        <input class="star star-5" id="star-5" type="radio" name="star[5]"/>
-        <label class="star star-5" for="star-5"></label>
-        <input class="star star-4" id="star-4" type="radio" name="star[4]"/>
-        <label class="star star-4" for="star-4"></label>
-        <input class="star star-3" id="star-3" type="radio" name="star[3]"/>
-        <label class="star star-3" for="star-3"></label>
-        <input class="star star-2" id="star-2" type="radio" name="star[2]"/>
-        <label class="star star-2" for="star-2"></label>
         <input class="star star-1" id="star-1" type="radio" name="star[1]"/>
         <label class="star star-1" for="star-1"></label>
-        <input class="btn btn-primary btn-lg" type='submit' name='rating' value='Add Rating'>
+        <input class="star star-2" id="star-2" type="radio" name="star[2]"/>
+        <label class="star star-2" for="star-2"></label>
+        <input class="star star-3" id="star-3" type="radio" name="star[3]"/>
+        <label class="star star-3" for="star-3"></label>
+        <input class="star star-4" id="star-4" type="radio" name="star[4]"/>
+        <label class="star star-4" for="star-4"></label>
+        <input class="star star-5" id="star-5" type="radio" name="star[5]"/>
+        <label class="star star-5" for="star-5"></label>
+        <input class="btn btn-primary btn-lg fr" type='submit' name='rating' value='Add Rating'>
       </form>
       <%if user_id%>
         <% if user.shows.where(id: show.id).count != 0 %>
           <form class="show-add" action="/users/:id" method="post">
             <input type='hidden' name='_method' value='delete'>
-            <input class="btn btn-primary btn-lg" type='submit' name='show[<%= show.id%>]' value='Delete from my shows'>
+            <input class="btn btn-primary btn-lg fr" type='submit' name='show[<%= show.id%>]' value='Delete from my shows'>
           </form>
         <%else%>
           <form class="show-add" action="/users/:id" method="post">
             <input type='hidden' name='_method' value='put'>
-            <input class="btn btn-primary btn-lg" type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
+            <input class="btn btn-primary btn-lg fr" type='submit' name='show[<%= show.id%>]' value='Add to my shows'>
           </form>
         <%end%>
       <%end%>
