@@ -47,7 +47,6 @@
       <% if session[:user_id] %>
         <form action="/logout" method="post">
           <input class="linkButton" type='submit' value='Logout' />
-          <span>| <a href="/signup"> Sign Up</span></a>
         </form>
         <a href="/users/<%= session[:user_id] %>">Profile</a>
       <% else %>
