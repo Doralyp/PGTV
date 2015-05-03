@@ -27,7 +27,7 @@
   <p><%= fav_channel.keys.join %><p>
 
 <h6>Based on your likes, we recommend watching:</h6>
-<% id = rand(shows.count) %>
+<% id = rand(1..shows.count) %>
 <% recommendation = shows.find(id) %>
 <%= recommendation.title %> | <%= recommendation.air_day %>'s at <%= recommendation.air_time %>
 
