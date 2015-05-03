@@ -3,7 +3,7 @@
   <h5><%= show.description %></h5>
   <h6>Watch it on <%= show.channel.name%> on <%=show.air_day%>s at <%=show.air_time%></h6>
   <p>Genre: <%= show.genre.name %></p>
-  <p>Rating: <%= show.rating %></p>
+  <p>Rating: <%= show.ratings %></p>
   <img src="<%= show.photo %>" />
 </div>
 
@@ -23,7 +23,7 @@
 
 
 <div class="stars">
-  <form action="/show/<%= show.id%>/rating" method='post'>
+  <form action="/show/<%= show.id%>" method='post'>
     <input type='hidden' name='_method' value='put'>
     <input class="star star-5" id="star-5" type="radio" name="star[5]"/>
     <label class="star star-5" for="star-5"></label>
@@ -39,7 +39,6 @@
   </form>
 </div>
 
-<%= show.rate_count%> votes
 
 <div>
   <form action="/shows/new" method="post">
