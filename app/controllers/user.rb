@@ -1,3 +1,4 @@
+#ZM: Fix indentation
 get '/users/:id/calendar' do
 user_id = session[:user_id]
 shows = User.find(user_id).shows.order(:air_time).group_by(&:air_time)
@@ -10,6 +11,7 @@ get "/users/:id" do
     user = User.find(params[:id])
     return [500,"No user by that ID found"] unless user
 
+    #ZM: Favorite should not be a helper, but a method on the model.
     fav_genre = favorite("Genre", user)
 
     fav_channel = favorite("Channel", user)

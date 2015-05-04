@@ -1,6 +1,10 @@
+#ZM: this file should be named tv_shows.rb
+
+#ZM: Do not leave require pry in your final models. Can lead to issues.
 require 'pry'
 
 get "/shows" do
+  #ZM: this should be a class method on the Show model. 
   shows = Show.all.sort{ |show_a, show_b| show_b.rating_average <=> show_a.rating_average }
   erb :"/tvshows/index", locals:{shows: shows}
 end
@@ -29,6 +33,7 @@ end
 
 put '/show/:id/rating' do
   show = Show.find(params[:id])
+  #ZM: This logic should be within the Model.... Given a value calculate the rating.
   rating = Rating.new(rating_value: (6 - params[:star].first.first.to_i))
   show.ratings << rating
   redirect "/shows/#{show.id}"
