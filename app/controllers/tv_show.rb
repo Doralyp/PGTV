@@ -1,30 +1,19 @@
-#ZM: this file should be named tv_show.rb
-
-#ZM: Do not leave require pry in your final models. Can lead to issues.
-require 'pry'
 
 get "/shows" do
-  #ZM: this should be a class method on the Show model. 
-  shows = Show.all.sort{ |show_a, show_b| show_b.rating_average <=> show_a.rating_average }
+  shows = Show.sort_shows
   erb :"/tvshows/index", locals:{shows: shows}
 end
 
 get "/shows/search" do
-  #ZM: this should be in the show model
-  shows = Show.where("lower(title) LIKE ?", "%#{params[:query].downcase}%")
+  shows = Show.find_show(params[:query])
   erb :"/tvshows/index", locals: {shows: shows}
 end
 
 
 put '/shows/new' do
   show = Show.find(params[:show].keys).first
-  
-  #ZM: Replace /w this
   show.comments.build(comment: params[:comment])
 
-  #ZM: These two lines
-  comment = Comment.create(comment: params[:comment])
-  show.comments << comment
   
   return[500, "Couldn't save this comment"] unless comment.save
   redirect "/shows/#{show.id}"
@@ -43,6 +32,10 @@ put '/show/:id/rating' do
   #ZM: This logic should be within the Model.... Given a value calculate the rating.
   #ZM: This can also be turned into a build
   rating = Rating.new(rating_value: (6 - params[:star].first.first.to_i))
-  show.ratings << rating
+  show.rating.build(rating: rating)
   redirect "/shows/#{show.id}"
 end
+
+
+
+

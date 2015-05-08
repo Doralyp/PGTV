@@ -12,4 +12,12 @@ class Show < ActiveRecord::Base
   def rating_average
     ratings.average(:rating_value).to_f
   end
+
+  def self.sort_shows
+    shows = Show.all.sort{ |show_a, show_b| show_b.rating_average <=> show_a.rating_average }
+  end
+
+  def show_search(search)
+    shows = Show.where("lower(title) LIKE ?", "#{search.downcase}")
+  end
 end

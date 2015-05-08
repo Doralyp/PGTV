@@ -1,5 +1,5 @@
 #ZM: No need for the word /index
-get '/genres/index' do
+get '/genres' do
   genres = Genre.all
   erb :'genres/index', locals: {genres: genres}
 end
