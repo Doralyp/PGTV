@@ -12,9 +12,11 @@ end
 
 post '/signup' do
   user = User.new
+  #ZM: You can use the shorthand version of this now. User.new(name: params[:name], etc..)
   user.name = params[:name]
   user.email = params[:email]
   user.password = params[:password]
+  
   if user.save
     session[:user_id] = user.id
     redirect "users/#{user.id}"
